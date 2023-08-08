@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
+
+.light-mode {
+  --color-backgroud: #ffffff;
+  --color-text: #121212;
+  --color-icon: rgb(0 0 0 / 54%);
+  --color-icon-active: rgb(0 0 0 / 87%);
+  --color-input-backgroud: #ffffff;
+  --color-selection-text: #ffffff;
+  --color-selection-background: #121212;
+}
+
+.dark-mode {
+  --color-backgroud: #121212;
+  --color-text: #ffffffde;
+  --color-icon: rgb(255 255 255 / 70%);
+  --color-icon-active: rgb(255 255 255);
+  --color-input-backgroud: #383838;
+  --color-selection-text: #121212;
+  --color-selection-background: #ffffff;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  padding: 16px;
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-backgroud);
+}
+
+::selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-background);
+}
+
+.buildIdBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.infoBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hostnameBox {
+  display: flex;
+  gap: 8px;
+}
+
+.formBox {
+  position: relative;
+}
+
+input[type="text"] {
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 42px 8px 8px;
+  color: var(--color-text);
+  background: var(--color-input-backgroud);
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.fader {
+  width: 58px;
+  height: calc(100% - 8px);
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  background-color: linear-gradient(90deg, transparent 0%, var(--color-input-backgroud) 50%);
+}
+
+/* Override */
+.material-symbols-outlined {
+  font-size: 21px;
+}
+
+.theme-btn {
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-icon);
+}
+
+.theme-btn:hover {
+  color: var(--color-icon-active);
+}
+
+.copy-icon {
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-icon);
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-55%);
+}
+
+.copy-icon:hover {
+  color: var(--color-icon-active);
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+}
+
+.animate-rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}

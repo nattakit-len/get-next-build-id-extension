@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="popup.css" />
+    <style id="custom-styles"></style>
+  </head>
+  <body>
+    <div class="buildIdBox">
+      <div class="infoBox">
+        <div class="hostnameBox">
+          <img id="icon" width="24" height="24" />
+          <div id="hostname">
+            <!-- hostname -->
+          </div>
+        </div>
+        <div id="light-mode-btn">
+          <span class="material-symbols-outlined theme-btn"> light_mode </span>
+        </div>
+
+        <div id="dark-mode-btn">
+          <span class="material-symbols-outlined theme-btn"> dark_mode </span>
+        </div>
+      </div>
+
+      <div class="formBox">
+        <input
+          id="buildIdText"
+          type="text"
+          placeholder="Build Id"
+          aria-label="SHA"
+          readonly
+        />
+        <div class='fader'></div>
+        <span id="copy-btn" class="material-symbols-outlined copy-icon">
+          content_copy
+        </span>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
